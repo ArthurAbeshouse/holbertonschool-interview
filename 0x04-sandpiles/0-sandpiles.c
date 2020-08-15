@@ -6,11 +6,12 @@
  */
 void print_matrix(int grid[3][3])
 {
+	int i, j;
 
 	printf("=\n");
-	for (int i = 0; i < 3; i += 1)
+	for (i = 0; i < 3; i += 1)
 	{
-		for (int j = 0; j < 3; j += 1)
+		for (j = 0; j < 3; j += 1)
 		{
 			if (j)
 				printf(" ");
@@ -42,8 +43,10 @@ void sandpiles_sum(int grid1[3][3], int grid2[3][3])
  */
 void add_sandpiles(int grid1[3][3], int grid2[3][3])
 {
-	for (int i = 0; i < 3; i += 1)
-		for (int j = 0; j < 3; j += 1)
+	int i, j;
+
+	for (i = 0; i < 3; i += 1)
+		for (j = 0; j < 3; j += 1)
 		{
 			grid1[i][j] += grid2[i][j];
 			grid2[i][j] = 0;
@@ -59,8 +62,10 @@ void add_sandpiles(int grid1[3][3], int grid2[3][3])
  */
 int verify_if_stable(int grid[3][3])
 {
-	for (int i = 0; i < 3; i += 1)
-		for (int j = 0; j < 3; j += 1)
+	int i, j;
+
+	for (i = 0; i < 3; i += 1)
+		for (j = 0; j < 3; j += 1)
 		{
 			if (grid[i][j] > 3)
 				return (1);
@@ -75,8 +80,10 @@ int verify_if_stable(int grid[3][3])
  */
 void collapse_sandpile(int grid1[3][3], int grid2[3][3])
 {
-	for (int i = 0; i < 3; i += 1)
-		for (int j = 0; j < 3; j += 1)
+	int i, j;
+
+	for (i = 0; i < 3; i += 1)
+		for (j = 0; j < 3; j += 1)
 			if (grid1[i][j] > 3)
 			{
 				grid1[i][j] -= 4;
