@@ -3,6 +3,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
 
 void sandpiles_sum(int grid1[3][3], int grid2[3][3]);
 void print_matrix(int grid[3][3]);
