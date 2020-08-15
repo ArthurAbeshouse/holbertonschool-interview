@@ -76,9 +76,7 @@ int verify_if_stable(int grid[3][3])
 void collapse_sandpile(int grid1[3][3], int grid2[3][3])
 {
 	for (int i = 0; i < 3; i += 1)
-	{
 		for (int j = 0; j < 3; j += 1)
-		{
 			if (grid1[i][j] > 3)
 			{
 				grid1[i][j] -= 4;
@@ -91,7 +89,5 @@ void collapse_sandpile(int grid1[3][3], int grid2[3][3])
 				if (j + 1 <= 2)
 					grid2[i][j + 1] += 1;
 			}
-		}
-	}
 	add_sandpiles(grid1, grid2);
 }
