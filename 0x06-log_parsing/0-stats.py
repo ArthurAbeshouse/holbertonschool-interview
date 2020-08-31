@@ -20,6 +20,7 @@ if __name__ == "__main__":
         for line in stdin:
             if count == 10:
                 print_stats()
+                count = 0
             wrds = line.split(" ")
             size += int(wrds[8])
             status[int(wrds[7])] += 1
