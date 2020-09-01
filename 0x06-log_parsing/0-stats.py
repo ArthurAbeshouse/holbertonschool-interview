@@ -21,13 +21,14 @@ if __name__ == "__main__":
                 print_stats()
                 count = 0
             wrds = line.split()
+
             try:
                 size += int(wrds[8])
-            except:
+            except BaseException:
                 pass
             try:
                 status[int(wrds[7])] += 1
-            except:
+            except BaseException:
                 pass
             count += 1
     except KeyboardInterrupt:
