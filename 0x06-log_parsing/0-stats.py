@@ -15,19 +15,20 @@ if __name__ == "__main__":
 
     try:
         for line in sys.stdin:
+            wrds = line.split()
+            if (len(wrds) > 2):
+                try:
+                    size += int(wrds[8])
+                except BaseException:
+                    pass
+                try:
+                    status[int(wrds[7])] += 1
+                except BaseException:
+                    pass
+            count += 1
             if count == 10:
                 print_stats()
                 count = 0
-            wrds = line.split()
-            try:
-                size += int(wrds[8])
-            except BaseException:
-                pass
-            try:
-                status[int(wrds[7])] += 1
-            except BaseException:
-                pass
-            count += 1
     except KeyboardInterrupt:
         print_stats()
         raise
