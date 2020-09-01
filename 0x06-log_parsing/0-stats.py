@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """Reads stdin line by line and computes metrics"""
 if __name__ == "__main__":
-    from sys import stdin
+    import sys
 
     count = 0
     size = 0
@@ -14,7 +14,7 @@ if __name__ == "__main__":
                 print(str(s) + ": " + str(status[s]))
 
     try:
-        for line in stdin:
+        for line in sys.stdin:
             if count == 10:
                 print_stats()
                 count = 0
