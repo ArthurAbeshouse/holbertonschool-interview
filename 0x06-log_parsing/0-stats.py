@@ -18,11 +18,11 @@ if __name__ == "__main__":
             wrds = line.split()
             if (len(wrds) > 2):
                 try:
-                    size += int(wrds[8])
+                    size += int(wrds[-1])
                 except:
                     pass
                 try:
-                    status[int(wrds[7])] += 1
+                    status[int(wrds[-2])] += 1
                 except:
                     pass
             count += 1
@@ -30,6 +30,6 @@ if __name__ == "__main__":
                 print_stats()
                 count = 0
     except KeyboardInterrupt:
-        pass
-    finally:
         print_stats()
+        raise
+    print_stats()
