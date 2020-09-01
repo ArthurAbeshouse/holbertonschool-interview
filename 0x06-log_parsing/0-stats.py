@@ -21,8 +21,14 @@ if __name__ == "__main__":
                 print_stats()
                 count = 0
             wrds = line.split()
-            size += int(wrds[8])
-            status[int(wrds[7])] += 1
+            try:
+                size += int(wrds[8])
+            except:
+                pass
+            try:
+                status[int(wrds[7])] += 1
+            except:
+                pass
             count += 1
     except KeyboardInterrupt:
         print_stats()
