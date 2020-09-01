@@ -30,6 +30,6 @@ if __name__ == "__main__":
                 print_stats()
                 count = 0
     except KeyboardInterrupt:
+        pass
+    finally:
         print_stats()
-        raise
-    print_stats()
