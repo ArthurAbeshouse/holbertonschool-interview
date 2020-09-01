@@ -19,11 +19,11 @@ if __name__ == "__main__":
             if (len(wrds) > 2):
                 try:
                     size += int(wrds[8])
-                except BaseException:
+                except:
                     pass
                 try:
                     status[int(wrds[7])] += 1
-                except BaseException:
+                except:
                     pass
             count += 1
             if count == 10:
@@ -31,3 +31,5 @@ if __name__ == "__main__":
                 count = 0
     except KeyboardInterrupt:
         print_stats()
+        raise
+    print_stats()
