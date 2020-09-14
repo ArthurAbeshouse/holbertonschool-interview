@@ -8,7 +8,7 @@
 
 int is_palindrome(unsigned long n)
 {
-	unsigned long n_clone, remains, reverse;
+	unsigned long n_clone, remains = 0, reverse = 0;
 
 	for (n_clone = n; n_clone != 0; n_clone /= 10)
 	{
