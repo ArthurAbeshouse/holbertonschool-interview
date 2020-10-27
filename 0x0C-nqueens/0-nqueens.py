@@ -4,6 +4,7 @@ import sys
 
 
 def approve_placement(board, row, col):
+    """Determine if it's safe for the queen to assume position"""
     for a in range(col):
         if board[a] is row or abs(board[a] - row) is abs(a - col):
             return False
@@ -11,6 +12,7 @@ def approve_placement(board, row, col):
 
 
 def Print_Board(board):
+    """Prints the solution and board"""
     pos = []
     board_size = len(board)
     for row in range(board_size):
@@ -20,6 +22,7 @@ def Print_Board(board):
 
 
 def Place_Queen(board, col):
+    """Places the queens safely on the board"""
     if col is len(board):
         Print_Board(board)
         return
