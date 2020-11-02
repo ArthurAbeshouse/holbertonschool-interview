@@ -45,6 +45,9 @@ avl_t *sorted_array(int *arr, int start, int end)
 
 	tree = binary_tree_node(parent, arr[mid_value]);
 
+	if (tree == NULL)
+		return (NULL);
+
 	tree->left = sorted_array(arr, start, mid_value - 1);
 	tree->right = sorted_array(arr, mid_value + 1, end);
 
@@ -68,7 +71,7 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 {
 	avl_t *root = sorted_array(array, 0, size - 1);
 
-	if (!array)
+	if (!array || size < 1)
 		return (NULL);
 
 	return (root);
