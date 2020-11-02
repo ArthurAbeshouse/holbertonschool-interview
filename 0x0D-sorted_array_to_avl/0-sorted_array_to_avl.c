@@ -41,7 +41,6 @@ avl_t *sorted_array(int *arr, int start, int end)
 	if (start > end)
 		return (NULL);
 
-
 	int mid_value = (start + end) / 2;
 
 	tree = binary_tree_node(parent, arr[mid_value]);
