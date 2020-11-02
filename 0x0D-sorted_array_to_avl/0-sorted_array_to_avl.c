@@ -67,7 +67,7 @@ avl_t *sorted_array(int *arr, int start, int end)
 
 avl_t *sorted_array_to_avl(int *array, size_t size)
 {
-	avl_t *root;
+	avl_t *root = NULL;
 
 	if (!array || size < 1)
 		return (NULL);
