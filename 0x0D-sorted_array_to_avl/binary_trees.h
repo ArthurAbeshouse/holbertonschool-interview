@@ -3,7 +3,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <stddef.h>
 
 /**
  * struct binary_tree_s - Binary tree node
@@ -28,5 +27,6 @@ void binary_tree_print(const binary_tree_t *);
 avl_t *sorted_array_to_avl(int *array, size_t size);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 avl_t *sorted_array(int *arr, int start, int end);
+
 
 #endif
