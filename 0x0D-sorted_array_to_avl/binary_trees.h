@@ -30,4 +30,4 @@ avl_t *sorted_array_to_avl(int *array, size_t size);
 avl_t *sorted_array(int *arr, int start, int end);
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 
-#endif
+#endif /* _BINARY_TREES_H_ */
