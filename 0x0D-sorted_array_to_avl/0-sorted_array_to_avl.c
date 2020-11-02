@@ -36,13 +36,14 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 
 avl_t *sorted_array(int *arr, int start, int end)
 {
+	int mid_value;
 	avl_t *tree;
 	binary_tree_t *parent = NULL;
 
 	if (start > end)
 		return (NULL);
 
-	int mid_value = (start + end) / 2;
+	mid_value = (start + end) / 2;
 
 	tree = binary_tree_node(parent, arr[mid_value]);
 
