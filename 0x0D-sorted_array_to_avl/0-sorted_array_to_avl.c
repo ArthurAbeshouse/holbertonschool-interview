@@ -54,7 +54,7 @@ avl_t *sorted_array(int *arr, int start, int end)
 	if (tree->left)
 		tree->left->parent = tree;
 
-	if (tree->right)
+	else if (tree->right)
 		tree->right->parent = tree;
 
 	return (tree);
