@@ -15,7 +15,9 @@ binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 	binary_tree_t *new_node = malloc(sizeof(binary_tree_t));
 
 	if (new_node == NULL)
+	{
 		return (NULL);
+	}
 
 	/*Assign data to this node*/
 	new_node->n = value;
@@ -39,7 +41,9 @@ avl_t *sorted_array(int *arr, int start, int end)
 	binary_tree_t *parent = NULL;
 
 	if (start > end)
+	{
 		return (NULL);
+	}
 
 
 	int mid_value = (start + end) / 2;
@@ -50,10 +54,14 @@ avl_t *sorted_array(int *arr, int start, int end)
 	tree->right = sorted_array(arr, mid_value + 1, end);
 
 	if (tree->left)
+	{
 		tree->left->parent = tree;
+	}
 
 	else if (tree->right)
+	{
 		tree->right->parent = tree;
+	}
 
 	return (tree);
 }
@@ -69,8 +77,10 @@ avl_t *sorted_array_to_avl(int *array, size_t size)
 {
 	avl_t *root = sorted_array(array, 0, size - 1);
 
-	if (size < 1)
+	if (!array || size < 1)
+	{
 		return (NULL);
+	}
 
 	return (root);
 }
