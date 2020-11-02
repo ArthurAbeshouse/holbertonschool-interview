@@ -50,6 +50,9 @@ avl_t *sorted_array(int *arr, int start, int end)
 
 	tree = binary_tree_node(parent, arr[mid_value]);
 
+	if (!tree)
+		return (NULL);
+
 	tree->left = sorted_array(arr, start, mid_value - 1);
 	tree->right = sorted_array(arr, mid_value + 1, end);
 
@@ -58,7 +61,7 @@ avl_t *sorted_array(int *arr, int start, int end)
 		tree->left->parent = tree;
 	}
 
-	if (tree->right)
+	else if (tree->right)
 	{
 		tree->right->parent = tree;
 	}
