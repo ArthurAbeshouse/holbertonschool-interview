@@ -21,7 +21,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 		printf("%s [%lu] = [%d]\n", msg1, now->index, now->n);
 		if (now->n >= value)
 		{
-			printf("%s [%lu] = [%zu]\n", msg2, prev->index,
+			printf("%s [%lu] = [%lu]\n", msg2, prev->index,
 			       now->index);
 			break;
 		}
@@ -32,7 +32,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 			{
 				list = list->next;
 			}
-			printf("%s [%lu] = [%zu]\n", msg2, now->index,
+			printf("%s [%lu] = [%lu]\n", msg2, now->index,
 			       list->index);
 		}
 		prev = now;
