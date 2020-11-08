@@ -10,14 +10,15 @@
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
 	skiplist_t *prev, *now;
-	char *msg1 = "Value checked at index",
-		*msg2 = "Value found between indexes";
+	char *msg1, *msg2;
 
 	if (!list)
 		return (NULL);
 
 	prev = list;
 	now = list->express;
+	msg1 = "Value checked at index";
+	msg2 = "Value found between indexes";
 
 	while (now)
 	{
