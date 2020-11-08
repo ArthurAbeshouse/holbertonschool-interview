@@ -9,12 +9,15 @@
 
 skiplist_t *linear_skip(skiplist_t *list, int value)
 {
-	skiplist_t *prev = list, *now = list->express;
+	skiplist_t *prev, *now;
 	char *msg1 = "Value checked at index",
 		*msg2 = "Value found between indexes";
 
 	if (!list || !list->express)
 		return (NULL);
+
+	prev = list;
+	now = list->express;
 
 	while (now)
 	{
