@@ -13,7 +13,7 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	char *msg1 = "Value checked at index",
 		*msg2 = "Value found between indexes";
 
-	if (!list || !list->express)
+	if (!list)
 		return (NULL);
 
 	prev = list;
