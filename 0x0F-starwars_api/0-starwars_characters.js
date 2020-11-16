@@ -10,8 +10,8 @@ request(`https://swapi-api.hbtn.io/api/films/${process.argv[2]}`, async function
     await new Promise((resolve, reject) => {
       request(i, function (error, response, body) {
         if (error) {
-	  console.log(error)
-	}
+          console.log(error)
+        }
         console.log(JSON.parse(body).name)
         resolve()
       })
