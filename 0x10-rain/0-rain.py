@@ -1,9 +1,12 @@
 #!/usr/bin/python3
 
-"""Given a list of non-negative integers representing walls of width 1, calculate how much water will be retained after it rains."""
+"""Given a list of non-negative integers representing walls of width 1,
+calculate how much water will be retained after it rains."""
+
 
 def rain(walls):
-    """Determines how many units of water are contained within the array's walls"""
+    """Determines how many units of water are contained
+    within the array's walls"""
     water_total = 0
     size = len(walls)
 
