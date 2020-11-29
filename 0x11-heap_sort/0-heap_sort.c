@@ -18,7 +18,9 @@ void heap_sort(int *array, size_t size)
 	for (index = size - 1; index >= 0; index -= 1)
 	{
 		if (array[0] != array[index])
+		{
 			swap(array, size, 0, index);
+		}
 
 		heapify(array, index, 0, size);
 	}
@@ -45,8 +47,10 @@ void heapify(int *array, size_t size, int index, size_t full_size)
 
 	if (largest != index)
 	{
-
-		swap(array, full_size, index, largest);
+		if (array[index] != array[largest])
+		{
+			swap(array, full_size, index, largest);
+		}
 		heapify(array, size, largest, full_size);
 	}
 }
