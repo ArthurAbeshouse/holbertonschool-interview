@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stddef.h>
 
 void heap_sort(int *array, size_t size);
 void swap(int *array, size_t size, int a, int b);
