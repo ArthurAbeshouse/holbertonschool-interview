@@ -15,12 +15,9 @@ void heap_sort(int *array, size_t size)
 	for (index = size / 2 - 1; index >= 0; index -= 1)
 		heapify(array, size, index, size);
 
-	for (index = size - 1; index >= 0; index -= 1)
+	for (index = size - 1; index > 0; index -= 1)
 	{
-		if (array[0] != array[index])
-		{
-			swap(array, size, 0, index);
-		}
+		swap(array, size, 0, index);
 		heapify(array, index, 0, size);
 	}
 }
