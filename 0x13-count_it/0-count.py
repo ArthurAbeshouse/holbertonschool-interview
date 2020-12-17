@@ -39,7 +39,7 @@ def print_results(word_list, hot_list):
     for title in hot_list:
         for word in word_list:
             for title_word in title.lower().split():
-                if title_word in word.lower():
+                if title_word == word.lower():
                     count[word] += 1
                 count[word] += 0
 
