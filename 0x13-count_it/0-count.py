@@ -20,8 +20,8 @@ def count_words(subreddit, word_list, hot_list=[], after=None):
 
     response = requests.get(reddit_url.format(subreddit),
                             headers=headers, params=params)
-    if response.status_code != 200:
-        return None
+    if not response.status_code == 200:
+        return
     data = response.json().get('data', {})
     after = data.get('after', 'STOP')
     if not after:
@@ -41,7 +41,6 @@ def print_results(word_list, hot_list):
             for title_word in title.lower().split():
                 if title_word == word.lower():
                     count[word] += 1
-                count[word] += 0
 
     count = {k: v for k, v in count.items() if v > 0}
     words = list(count.keys())
