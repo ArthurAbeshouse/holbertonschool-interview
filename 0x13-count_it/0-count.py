@@ -20,8 +20,8 @@ def count_words(subreddit, word_list, hot_list=[], after=None):
 
     response = requests.get(reddit_url.format(subreddit),
                             headers=headers, params=params)
-    if not response.status_code == 200:
-        return
+    if response.status_code != 200:
+        return None
     data = response.json().get('data', {})
     after = data.get('after', 'STOP')
     if not after:
