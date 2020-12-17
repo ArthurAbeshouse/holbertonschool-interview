@@ -35,16 +35,14 @@ def print_results(word_list, hot_list):
     """Prints the request results"""
     count = {}
     for word in word_list:
-        count[word] = 0
+        count[word.lower()] = 0
     for title in hot_list:
         for word in word_list:
             for title_word in title.lower().split():
                 if title_word == word.lower():
-                    count[word] += 1
-#                else:
-#                    count[word] += 0
+                    count[word.lower()] += 1
 
-    count = {k.lower(): v for k, v in count.items() if v > 0}
+    count = {k: v for k, v in count.items() if v > 0}
     words = list(count.keys())
     for word in sorted(words,
                        reverse=True, key=lambda k: count[k]):
