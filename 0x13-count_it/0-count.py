@@ -42,7 +42,7 @@ def print_results(word_list, hot_list):
                 if title_word == word.lower():
                     count[word.lower()] += 1
                 else:
-                    count[word] += 0
+                    count[word.lower()] += 0
 
     count = {k.lower(): v for k, v in count.items() if v > 0}
     words = list(count.keys())
