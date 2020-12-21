@@ -10,11 +10,19 @@ int heap_extract(heap_t **root)
 	heap_t *last_inserted_node = NULL;
 	int swap;
 
-	if (!*root)
+	if (!*root || !root)
 		return (0);
 
 	swap = (*root)->n;
 	last_inserted_node = push_to_top(*root);
+
+	/* Incase *root is NULL */
+	if ((*root) == last_inserted_node)
+	{
+		free(*root);
+		*root = NULL;
+		return (swap);
+	}
 
 	if (last_inserted_node->parent->right)
 		last_inserted_node->parent->right = NULL;
