@@ -13,11 +13,11 @@ int main(int argc, char **argv)
 	int len, len1, len2;
 
 	if (argc != 3)
-		printf("Error\n"), exit(98);
+		error();
 	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]), len = len1 + len2;
 	res = malloc(len * sizeof(char));
 	if (!res)
-		printf("Error\n"), exit(98);
+		error();
 	top = argv[1];
 	bottom = argv[2];
 
@@ -47,7 +47,7 @@ char *multi(int len, int len1, int len2, char *top, char *bottom, char *res)
 		if (!_isdigit(top[i]))
 		{
 			free(res);
-			printf("Error\n"), exit(98);
+			error();
 		}
 		num1 = top[i] - '0';
 
@@ -56,7 +56,7 @@ char *multi(int len, int len1, int len2, char *top, char *bottom, char *res)
 			if (!_isdigit(bottom[j]))
 			{
 				free(res);
-				printf("Error\n"), exit(98);
+				error();
 			}
 			num2 = bottom[j] - '0';
 			sum = num1 * num2;
@@ -110,4 +110,22 @@ int _isdigit(int c)
 		return (1);
 
 	return (0);
+}
+
+/**
+ *
+ */
+void error(void)
+{
+	int e = 0;
+	char error_message[] = "Error";
+
+	while (e < 5)
+	{
+		_putchar(error_message[e]);
+		e += 1;
+	}
+
+	_putchar('\n');
+	exit(98);
 }
