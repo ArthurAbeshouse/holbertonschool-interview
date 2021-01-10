@@ -1,21 +1,5 @@
 #include "holberton.h"
 
-/**
- * _strlen - returns the length of a string
- * @s: char type
- *
- * Return: the length of a string
- */
-int _strlen(char *s)
-{
-	int a;
-
-	for (a = 0; s[a] != '\0'; a++)
-	{
-
-	}
-	return (a);
-}
 
 /**
  * main - the entry point
@@ -96,6 +80,23 @@ char *multi(int len, int len1, int len2, char *top, char *bottom, char *res)
 			_putchar(res[i] + '0');
 	}
 	return (res);
+}
+
+/**
+ * _strlen - returns the length of a string
+ * @s: char type
+ *
+ * Return: the length of a string
+ */
+int _strlen(char *s)
+{
+	int a;
+
+	for (a = 0; s[a] != '\0'; a++)
+	{
+
+	}
+	return (a);
 }
 
 /**

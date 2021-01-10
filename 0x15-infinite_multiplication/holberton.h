@@ -6,7 +6,6 @@
 #include <stddef.h>
 #include <string.h>
 
-
 int _strlen(char *s);
 
 int _isdigit(int c);
