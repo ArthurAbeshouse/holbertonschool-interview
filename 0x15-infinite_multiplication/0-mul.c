@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 }
 
 /**
- * multiply - multiplies two numbers
+ * multi - multiplies two numbers
  * @len: the sum of len1 and len2
  * @len1: the front of the string
  * @len2: the end of the string
@@ -54,7 +54,7 @@ int main(int argc, char **argv)
  * @res: the results
  * Return: the product
  */
-char *multiply(int len, int len1, int len2, char *top, char *bottom, char *res)
+char *multi(int len, int len1, int len2, char *top, char *bottom, char *res)
 {
 	int i, j, k = 0, carry = 0, num1 = 0, num2 = 0, sum = 0;
 

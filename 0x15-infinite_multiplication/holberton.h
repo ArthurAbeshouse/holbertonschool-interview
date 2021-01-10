@@ -17,6 +17,6 @@ int _putchar(char c);
 
 void _puts(char *str);
 
-char *multiply(int len, int len1, int len2, char *top, char *bottom, char *res);
+char *multi(int len, int len1, int len2, char *top, char *bottom, char *res);
 
 #endif
