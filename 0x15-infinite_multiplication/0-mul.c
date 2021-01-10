@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	top = argv[1];
 	bottom = argv[2];
 
-	multiply(len, len1, len2, top, bottom, res);
+	multi(len, len1, len2, top, bottom, res);
 
 	_putchar('\n');
 	free(res);
