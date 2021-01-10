@@ -16,6 +16,6 @@ int _putchar(char c);
 
 char *multi(int len, int len1, int len2, char *top, char *bottom, char *res);
 
-void error(void);
+void error_msg(void);
 
 #endif
