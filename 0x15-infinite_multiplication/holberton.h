@@ -18,4 +18,6 @@ char *multi(int len, int len1, int len2, char *top, char *bottom, char *res);
 
 void error_msg(void);
 
+void *_calloc(unsigned int nmemb, unsigned int size);
+
 #endif

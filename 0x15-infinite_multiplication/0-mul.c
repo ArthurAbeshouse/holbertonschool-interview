@@ -9,21 +9,16 @@
 int main(int argc, char **argv)
 {
 	char *top, *bottom, *res = NULL;
-	unsigned int len, len1, len2, count = 0;
+	int len, len1, len2;
 
 	if (argc != 3)
 		error_msg();
 	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]), len = len1 + len2;
 	top = argv[1];
 	bottom = argv[2];
-	res = malloc(len * sizeof(char));
+	res = _calloc(len, sizeof(char));
 	if (!res)
 		error_msg();
-	while (count < len * sizeof(char))
-	{
-		res[count] = 0;
-		count += 1;
-	}
 
 	multi(len, len1, len2, top, bottom, res);
 
@@ -132,4 +127,30 @@ void error_msg(void)
 
 	_putchar('\n');
 	exit(98);
+}
+
+/**
+ * *_calloc - function that allocates memory for an array
+ * @nmemb: number of elements
+ * @size: byte size
+ * Return: return pointer to array
+ */
+
+void *_calloc(unsigned int nmemb, unsigned int size)
+{
+	char *ptr;
+	unsigned int count = 0;
+
+	if (nmemb == 0 || size == 0)
+		return (NULL);
+
+	ptr = malloc(nmemb * size);
+	if (ptr == NULL)
+		return (NULL);
+	while (count < nmemb * size)
+	{
+		ptr[count] = 0;
+		count++;
+	}
+	return (ptr);
 }
