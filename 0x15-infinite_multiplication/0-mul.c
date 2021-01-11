@@ -46,7 +46,7 @@ char *multi(int len, int len1, int len2, char *top, char *bottom, char *res)
 {
 	int i, j, k = 0, carry = 0, num1 = 0, num2 = 0, sum = 0;
 
-	for (i = (len1 > len2 ? len2 : len1) - 1; i >= 0; i -= 1)
+	for (i = len1 - 1; i >= 0; i -= 1)
 	{
 		if (!_isdigit(top[i]))
 		{
@@ -54,7 +54,7 @@ char *multi(int len, int len1, int len2, char *top, char *bottom, char *res)
 			error_msg();
 		}
 		num1 = top[i] - '0';
-		for (j = (len1 > len2 ? len1 : len2) - 1; j >= 0; j -= 1)
+		for (j = len2 - 1; j >= 0; j -= 1)
 		{
 			if (!_isdigit(bottom[j]))
 			{
