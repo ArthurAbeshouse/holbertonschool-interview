@@ -10,16 +10,21 @@
 int main(int argc, char **argv)
 {
 	char *top, *bottom, *res = NULL;
-	int len, len1, len2;
+	unsigned int len, len1, len2, count = 0;
 
 	if (argc != 3)
 		error_msg();
 	len1 = _strlen(argv[1]), len2 = _strlen(argv[2]), len = len1 + len2;
+	top = argv[1];
+	bottom = argv[2];
 	res = malloc(len * sizeof(char));
 	if (!res)
 		error_msg();
-	top = argv[1];
-	bottom = argv[2];
+	while (count < len * sizeof(char))
+	{
+		res[count] = 0;
+		count += 1;
+	}
 
 	multi(len, len1, len2, top, bottom, res);
 
@@ -50,7 +55,6 @@ char *multi(int len, int len1, int len2, char *top, char *bottom, char *res)
 			error_msg();
 		}
 		num1 = top[i] - '0';
-
 		for (j = (len1 > len2 ? len1 : len2) - 1; j >= 0; j -= 1)
 		{
 			if (!_isdigit(bottom[j]))
