@@ -7,11 +7,12 @@
  */
 void radix_sort(int *array, size_t size)
 {
+	size_t a[10][10], b[10];
+	size_t i, j, k, r, NOP = 0, div = 1, pass;
+
 	if (!array || size < 2)
 		return;
 
-	size_t a[10][10], b[10];
-	size_t i, j, k, r, NOP = 0, div = 1, pass;
 	size_t large = get_the_max(array, size);
 
 	while (large > 0)
