@@ -32,7 +32,7 @@ void radix_sort(int *array, size_t size)
 	if (!array || size < 2)
 		return;
 
-	size_t large = get_the_max(array, size);
+	large = get_the_max(array, size);
 
 	while (large > 0)
 	{
