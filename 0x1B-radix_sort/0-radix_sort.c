@@ -26,7 +26,7 @@ int get_the_max(int *array, size_t size)
  */
 void radix_sort(int *array, size_t size)
 {
-	size_t a[10][9999], b[10], i, j, k, r, NOP = 0, div = 1, pass;
+	size_t a[100][1024], b[10], i, j, k, r, NOP = 0, div = 1, pass;
 	size_t large = get_the_max(array, size);
 
 	if (!array || size < 2)
