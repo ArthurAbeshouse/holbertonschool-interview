@@ -56,8 +56,6 @@ void radix_sort(int *array, size_t size)
 				i += 1;
 			}
 		}
-		k = 0;
-		j = 0;
 		div *= 10;
 		print_array(array, size);
 	}
