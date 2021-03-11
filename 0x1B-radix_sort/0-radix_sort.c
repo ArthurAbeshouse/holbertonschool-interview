@@ -1,15 +1,36 @@
 #include "sort.h"
 
 /**
+ * get_the_max - determines which digits are the largest elements in the array
+ * @array: the array to sort
+ * @size: the size of the array
+ * Return: the max digits
+ */
+int get_the_max(int *array, size_t size)
+{
+	size_t i;
+	int maximum = array[0];
+
+	for (i = 1; i < size; i += 1)
+	{
+		if (array[i] > maximum)
+			maximum = array[i];
+	}
+	return (maximum);
+}
+
+/**
  * radix_sort - sorts an array using the radix method
  * @array: the array to sort
  * @size: the size of the array
  */
 void radix_sort(int *array, size_t size)
 {
-	size_t a[10][1024], b[1024];
-	size_t i, j, k, r, NOP = 0, div = 1, pass;
+	size_t a[10][1024], b[10], i, j, k, r, NOP = 0, div = 1, pass;
 	size_t large = get_the_max(array, size);
+
+	if (!array || size < 2)
+		return;
 
 	while (large > 0)
 	{
@@ -39,23 +60,4 @@ void radix_sort(int *array, size_t size)
 		print_array(array, size);
 	}
 
-}
-
-/**
- * get_the_max - determines which digits are the largest elements in the array
- * @array: the array to sort
- * @size: the size of the array
- * Return: the max digits
- */
-int get_the_max(int *array, size_t size)
-{
-	size_t i;
-	int maximum = array[0];
-
-	for (i = 1; i < size; i += 1)
-	{
-		if (array[i] > maximum)
-			maximum = array[i];
-	}
-	return (maximum);
 }
