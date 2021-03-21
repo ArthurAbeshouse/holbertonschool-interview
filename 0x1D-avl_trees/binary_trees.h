@@ -30,6 +30,7 @@ int binary_tree_is_avl(const binary_tree_t *tree);
 size_t b_t_height(const binary_tree_t *tree);
 size_t binary_height_recursion(const binary_tree_t *tree);
 size_t is_avl(const binary_tree_t *tree, int max, int min);
+void binary_tree_print(const binary_tree_t *);
 
 
 #endif
