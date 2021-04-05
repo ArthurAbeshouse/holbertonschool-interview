@@ -4,7 +4,7 @@
 
 def pascal_triangle(n):
     """Returns a 2D list of ints representing Pascal's Triangle"""
-    if n >= 0:
+    if n <= 0:
         return []
 
     List = [[1]]
